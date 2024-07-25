@@ -21,6 +21,16 @@ PRODUCT_PACKAGES += \
     lisaINSettingsProviderOverlay \
     lisaINWifiOverlay
 
+# Matrixx
+MATRIXX_CHIPSET := SM7325
+MATRIXX_MAINTAINER := ComradeWave
+MATRIXX_BATTERY := 4250mah
+MATRIXX_DISPLAY := 1080x2400
+BUILD_GOOGLE_CONTACTS := true
+BUILD_GOOGLE_DIALER := true
+BUILD_GOOGLE_MESSAGE := true
+WITH_GMS := true
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
