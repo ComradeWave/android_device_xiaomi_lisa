@@ -7,6 +7,13 @@
 # Inherit from sm8350-common
 $(call inherit-product, device/xiaomi/sm8350-common/common.mk)
 
+# Camera
+$(call inherit-product-if-exists, vendor/xiaomi/camera/miuicamera.mk)
+
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.miui.notch=1 \
+    ro.product.mod_device=lisa_global
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
@@ -19,7 +26,8 @@ PRODUCT_PACKAGES += \
     lisaGLSettingsProviderOverlay \
     lisaGLWifiOverlay \
     lisaINSettingsProviderOverlay \
-    lisaINWifiOverlay
+    lisaINWifiOverlay \
+    libutils.vendor
 
 # Matrixx
 MATRIXX_CHIPSET := SM7325
