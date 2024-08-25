@@ -4,6 +4,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+COMMON_PATH := device/xiaomi/sm8350-common
+
 # Inherit from sm8350-common
 $(call inherit-product, device/xiaomi/sm8350-common/common.mk)
 
@@ -38,6 +40,11 @@ BUILD_GOOGLE_CONTACTS := true
 BUILD_GOOGLE_DIALER := true
 BUILD_GOOGLE_MESSAGE := true
 WITH_GMS := true
+
+# Power
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/configs/powerhint_yupik.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
